@@ -3,6 +3,8 @@
 - The main purpose of the project is to model volatility surface for a given stock ticker. Therefore, it first computes implied volatilities based on call options' prices and then plots the values in a static and an intereactive 3D plot. 
 - Furthermore, several tools for analysis of options and volatility are provided. First, a tool for examination of historical and conditional GARCH(1,1) volatility is provided. Second, Greeks calculator may be used to calculate values of delta, gamma, theta, rho and vega.
 
+- !!!IT IS STRONGLY RECOMMENDED TO USE THE IV CALCULATOR PRIMARILY FOR THE MOST LIQUID STOCKS (AAPL, MSFT, AMZN, NVDA, GOOGL, META, TSLA, etc...)!!! (Newton's method is relatively simple algorithm which will tend to fail in less liquid cases, with smaller number of trades and slowly updating prices)
+
 - The project has been written using Python 3.13.1. List of dependencies may be found in requirements.txt file
 
 ## How to use the tools
@@ -22,4 +24,4 @@
 ### VolatilityCalculator
 - input: ticker
 - .garch_vol: inputs: training period (in days), graph window(purely graphical adjustment...how big interval we want displayed), forecast horizon(how many days forward forecast we want, based on our fitted GARCH(1,1) model), returns the latest computed conditional volatility value and a plot of conditional volatility together with the volatility forecast in red
-- .hist_vol: inputs: historical volatility window (the value of how many periods backwards should be considered for the calculation of historical volatility), returns the latest historical volatility value and plots the graph of the last month's historical volatility values based on the specified window
+- **.hist_vol**: inputs: historical volatility window (the value of how many periods backwards should be considered for the calculation of historical volatility), returns the latest historical volatility value and plots the graph of the last month's historical volatility values based on the specified window
